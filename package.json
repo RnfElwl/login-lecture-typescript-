@@ -1,0 +1,25 @@
+{
+  "name": "login-lecture-typescript-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RnfElwl/login-lecture-typescript-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RnfElwl/login-lecture-typescript-/issues"
+  },
+  "homepage": "https://github.com/RnfElwl/login-lecture-typescript-#readme",
+  "dependencies": {
+    "typescript": "^4.9.5"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1"
+  }
+}
