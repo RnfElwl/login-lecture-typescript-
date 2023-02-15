@@ -1,12 +1,9 @@
 import express, { Request, Response, Router } from "express";
+import { home, login } from "./home.ctrl";
 const router: Router = express.Router();
 
-router.get("/", (req: Request, res: Response) => {
-  res.render("home/index.ejs");
-});
+router.get("/", home);
 
-router.get("/login", (req: Request, res: Response) => {
-  res.render(`home/login.ejs`);
-});
+router.get("/login", login);
 
 export default router;
