@@ -1,21 +1,17 @@
-console.log("hihi");
-const express = require("express");
-const app = express();
+import express, { Application, Request, Response } from "express";
+const app: Application = express();
 
+const PORT: Number = 3000;
+import home from "./routes/home/index";
 //앱 세팅
 
 app.set("views", "./views");
 app.set("view engine", "ejs");
 
-app.get("/", (req: any, res: any) => {
-  res.render("home/index.ejs");
-});
+app.use("/", home);
 
-app.get("/login", (req: any, res: any) => {
-  res.render(`home/login.ejs`);
-});
-
-app.listen(3000, function () {
+app.listen(PORT, function () {
   console.log(`
+  서버가동
   `);
 });
