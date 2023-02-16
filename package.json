@@ -2,7 +2,7 @@
   "name": "login-lecture-typescript-",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.ts",
   "scripts": {
     "dev": "nodemon src/app.ts",
     "start": "tsc && node dist/index.js",

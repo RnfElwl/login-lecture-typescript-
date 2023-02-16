@@ -1,7 +1,7 @@
 import express, { Application, Request, Response } from "express";
-const app: Application = express();
 
-const PORT: Number = 3000;
+const app: Application = express();
+const num: Number = 1231323;
 import home from "./routes/home/index";
 //앱 세팅
 
@@ -10,8 +10,4 @@ app.set("view engine", "ejs");
 
 app.use("/", home);
 
-app.listen(PORT, function () {
-  console.log(`
-  서버가동
-  `);
-});
+export { app, num };
