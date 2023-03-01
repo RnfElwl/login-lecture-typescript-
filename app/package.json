@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.ts",
   "scripts": {
-    "dev": "nodemon src/app.ts",
-    "start": "ts-node ./bin/www.ts",
+    "dev": "nodemon ./bin/www.ts",
+    "start": "nodemon ./bin/www.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
