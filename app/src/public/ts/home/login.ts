@@ -9,5 +9,12 @@ function login() {
     id: (id as HTMLInputElement).value,
     psword: (psword as HTMLInputElement).value,
   };
+  fetch("/login", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(req),
+  });
   console.log(req);
 }
