@@ -1,10 +1,10 @@
 import express, { Request, Response, Router } from "express";
-import { home, login } from "./home.ctrl";
+import { output, process } from "./home.ctrl";
 
 const router: Router = express.Router();
 
-router.get("/", home);
+router.get("/", output.home);
 
-router.get("/login", login);
-
+router.get("/login", output.login);
+router.post("/login", process.login);
 export default router;
