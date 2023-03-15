@@ -9,13 +9,21 @@ async function login() {
     id: (id as HTMLInputElement).value,
     psword: (psword as HTMLInputElement).value,
   };
-
-  const res = await fetch("/login", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(req),
-  });
-  console.log(await res.json());
+  try {
+    const data = await fetch("/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(req),
+    });
+    const res = await data.json();
+    if (res.success) {
+      location.href = "/";
+    } else {
+      alert(res.msg);
+    }
+  } catch (err) {
+    console.error(new Error("로그인 중 에러 발생"));
+  }
 }

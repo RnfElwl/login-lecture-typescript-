@@ -40,14 +40,17 @@ var loginBtn = document.querySelector("button");
 loginBtn === null || loginBtn === void 0 ? void 0 : loginBtn.addEventListener("click", login);
 function login() {
     return __awaiter(this, void 0, void 0, function () {
-        var req, res, _a, _b;
-        return __generator(this, function (_c) {
-            switch (_c.label) {
+        var req, data, res, err_1;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
                 case 0:
                     req = {
                         id: id.value,
                         psword: psword.value
                     };
+                    _a.label = 1;
+                case 1:
+                    _a.trys.push([1, 4, , 5]);
                     return [4 /*yield*/, fetch("/login", {
                             method: "POST",
                             headers: {
@@ -55,13 +58,23 @@ function login() {
                             },
                             body: JSON.stringify(req)
                         })];
-                case 1:
-                    res = _c.sent();
-                    _b = (_a = console).log;
-                    return [4 /*yield*/, res.json()];
                 case 2:
-                    _b.apply(_a, [_c.sent()]);
-                    return [2 /*return*/];
+                    data = _a.sent();
+                    return [4 /*yield*/, data.json()];
+                case 3:
+                    res = _a.sent();
+                    if (res.success) {
+                        location.href = "/";
+                    }
+                    else {
+                        alert(res.msg);
+                    }
+                    return [3 /*break*/, 5];
+                case 4:
+                    err_1 = _a.sent();
+                    console.error(new Error("로그인 중 에러 발생"));
+                    return [3 /*break*/, 5];
+                case 5: return [2 /*return*/];
             }
         });
     });
