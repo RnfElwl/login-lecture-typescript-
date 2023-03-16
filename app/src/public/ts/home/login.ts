@@ -9,6 +9,7 @@ async function login() {
     id: (id as HTMLInputElement).value,
     psword: (psword as HTMLInputElement).value,
   };
+
   try {
     const data = await fetch("/login", {
       method: "POST",
