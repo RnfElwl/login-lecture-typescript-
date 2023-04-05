@@ -8,6 +8,9 @@ const output = {
   login: (req: Request, res: Response) => {
     res.render(`home/login.ejs`);
   },
+  register: (req: Request, res: Response) => {
+    res.render(`home/register.ejs`);
+  },
 };
 
 const process = {
