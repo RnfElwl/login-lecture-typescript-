@@ -34,28 +34,30 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var _a;
-var Login;
-(function (Login) {
-    Login.id = document.querySelector("#id");
-    Login.psword = document.querySelector("#psword");
-    Login.loginBtn = document.querySelector("#button");
-})(Login || (Login = {}));
-(_a = Login.loginBtn) === null || _a === void 0 ? void 0 : _a.addEventListener("click", login);
-function login() {
+var Register;
+(function (Register) {
+    Register.id = document.querySelector("#id");
+    Register.psword = document.querySelector("#psword");
+    Register.name = document.querySelector("#name");
+})(Register || (Register = {}));
+var confirmPsword = document.querySelector("#confirm-psword");
+var registerBtn = document.querySelector("#button");
+registerBtn === null || registerBtn === void 0 ? void 0 : registerBtn.addEventListener("click", register);
+function register() {
     return __awaiter(this, void 0, void 0, function () {
         var req, data, res, err_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     req = {
-                        id: Login.id.value,
-                        psword: Login.psword.value
+                        id: Register.id.value,
+                        psword: Register.psword.value
                     };
+                    console.log("hii");
                     _a.label = 1;
                 case 1:
                     _a.trys.push([1, 4, , 5]);
-                    return [4 /*yield*/, fetch("/login", {
+                    return [4 /*yield*/, fetch("/register", {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json"
@@ -68,7 +70,7 @@ function login() {
                 case 3:
                     res = _a.sent();
                     if (res.success) {
-                        location.href = "/";
+                        location.href = "/login";
                     }
                     else {
                         alert(res.msg);
@@ -76,7 +78,7 @@ function login() {
                     return [3 /*break*/, 5];
                 case 4:
                     err_1 = _a.sent();
-                    console.error(new Error("로그인 중 에러 발생"));
+                    console.error(new Error("회원가입 중 에러 발생"));
                     return [3 /*break*/, 5];
                 case 5: return [2 /*return*/];
             }

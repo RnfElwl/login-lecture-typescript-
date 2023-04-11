@@ -7,7 +7,8 @@
     "dev": "nodemon ./bin/www.ts",
     "start": "nodemon ts-node ./bin/www.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "login": "tsc ./src/public/ts/home/login.ts"
+    "login": "tsc ./src/public/ts/home/login.ts",
+    "register": "tsc ./src/public/ts/home/register.ts"
   },
   "repository": {
     "type": "git",

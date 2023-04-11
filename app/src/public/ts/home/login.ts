@@ -1,13 +1,14 @@
-const id = document.querySelector("#id");
-const psword = document.querySelector("#psword");
-const loginBtn = document.querySelector("button");
-
-loginBtn?.addEventListener("click", login);
+namespace Login {
+  export const id: any = document.querySelector("#id");
+  export const psword: any = document.querySelector("#psword");
+  export const loginBtn = document.querySelector("#button");
+}
+Login.loginBtn?.addEventListener("click", login);
 
 async function login() {
   const req = {
-    id: (id as HTMLInputElement).value,
-    psword: (psword as HTMLInputElement).value,
+    id: (Login.id as HTMLInputElement).value,
+    psword: (Login.psword as HTMLInputElement).value,
   };
 
   try {
