@@ -34,26 +34,31 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var _a;
 var Register;
 (function (Register) {
     Register.id = document.querySelector("#id");
     Register.psword = document.querySelector("#psword");
     Register.name = document.querySelector("#name");
+    Register.confirmPsword = document.querySelector("#confirm-psword");
+    Register.registerBtn = document.querySelector("#button");
 })(Register || (Register = {}));
-var confirmPsword = document.querySelector("#confirm-psword");
-var registerBtn = document.querySelector("#button");
-registerBtn === null || registerBtn === void 0 ? void 0 : registerBtn.addEventListener("click", register);
+(_a = Register.registerBtn) === null || _a === void 0 ? void 0 : _a.addEventListener("click", register);
 function register() {
     return __awaiter(this, void 0, void 0, function () {
         var req, data, res, err_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
+                    if (!Register.id.value)
+                        return [2 /*return*/, alert("아이디를 입력해주세요")];
+                    if (Register.psword.value !==
+                        Register.confirmPsword.value)
+                        return [2 /*return*/, alert("비밀번호가 일치하지 않습니다")];
                     req = {
                         id: Register.id.value,
                         psword: Register.psword.value
                     };
-                    console.log("hii");
                     _a.label = 1;
                 case 1:
                     _a.trys.push([1, 4, , 5]);
